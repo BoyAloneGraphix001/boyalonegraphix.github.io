@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoyAlone Graphix</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../My Portfolio/imgs/My Logo-22.png"
+    />
+  </head>
+  <body class="bg-purple-950 scroll-smooth">
+    <!--Hero Section-->
+    <section class="sm:max-w-7xl sm:m-auto bg-purple-200 p-2" id="Home">
+      <div
+        class="w-full flex flex-col sm:flex-row sm:mx-20 items-center align-middle"
+      >
+        <div
+          class="flex justify-center space-x-20 lg:space-x-120 sm:space-x-35 w-full fixed z-50 bg-purple-200 flex-wrap text-center top-0 sm:left-0 p-3 align-middle items-center"
+        >
+          <!--Logo-->
+
+          <div
+            class=" flex flex-row align-middle items-center space-x-35 lg:space-x-120 sm:space-x-40 "
+          >
+            <div class="flex align-middle items-center">
+              <picture>
+                <a href="#Home">
+                  <img
+                  src="../My Portfolio/imgs/My Logggo-22.png"
+                  alt=""
+                  class="w-9"
+                />
+                </a>
+              </picture>
+
+              <!--Name-->
+              <p class="sm:text-2xl font-bold text-purple-900">
+               <a href="#Home"> BoyAlone Graphix</a>
+              </p>
+            </div>
+
+            <!--Harmburger Icon-->
+            <div class="">
+              <button
+                class="flex items-center px-3 py-3 border rounded text-purple-900 border-purple-900 hover:border-purple-700 hover:text-purple-700 sm:hidden"
+                id="toggle"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class=""
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                  />
+                </svg>
+              </button>
+
+               <div
+            class="font-bold text-lg text-left sm:text-center hidden sm:flex sm:static sm:w-auto top-0 fixed right-0 h-full w-50 bg-purple-200"
+            id="content"
+          >
+            <ul
+              class="flex flex-col sm:flex-row md:space-x-10 lg:space-x-22 space-x-20 cursor-pointer text-purple-900 list-disc sm:list-none ml-10 sm:ml-0"
+            >
+              <a href="#Home"
+                ><li class="hover:underline transition" onclick="closeMenu()">
+                  Home
+                </li></a
+              >
+              <a href="#About"
+                ><li class="hover:underline transition" onclick="closeMenu()">
+                  About
+                </li></a
+              >
+              <a href="#Projects"
+                ><li class="hover:underline transition" onclick="closeMenu()">
+                  Projects
+                </li></a
+              >
+              <a href="#Contacts"
+                ><li class="hover:underline transition" onclick="closeMenu()">
+                  Contacts
+                </li></a
+              >
+            </ul>
+          </div>
+
+
+            </div>
+
+           
+          </div>
+
+          <!--NavBar-->
+          
+        </div>
+      </div>
+
+      <script>
+        const btn = document.getElementById("toggle");
+        const menu = document.getElementById("content");
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
+        function closeMenu() {
+          if (window.innerWidth < 768) {
+            menu.classList.add("hidden");
+          }
+        }
+      </script>
+
+      <div
+        class="flex flex-col sm:flex-row sm:mx-5 mt-30 text-center justify-center items-center sm:text-left"
+      >
+        <!--My Pic-->
+        <div class="sm:w-1/2 sm:flex sm:order-1">
+          <picture class="">
+            <img src="../My Portfolio/imgs/me3.png" class="" alt="" />
+          </picture>
+        </div>
+
+        <!--Hello-->
+        <div class="sm:w-1/2 sm:space-y-7 sm:mb-10 lg:mb-0 mb-5">
+          <p class="sm:mt-0 mt-5 text-3xl font-semibold">Hello!</p>
+          <p
+            class="text-6xl font-bold sm:py-5 py-5 text-purple-900 sm:text-8xl"
+          >
+            <span class="text-gray-900">I'm</span> Badmus Michael
+          </p>
+
+          <div
+            class="h-8 overflow-hidden w-max sm:text-3xl text-2xl text-purple-900 font-bold ml-20 mb-5 sm:mb-0 sm:ml-0"
+          >
+            <p
+              id="role-text"
+              class="absolute opacity-0 -translate-x-10 transition-all duration-500 ease-out"
+            >
+              Visual Designer
+            </p>
+          </div>
+
+          <script>
+            const roles = [
+              "Visual Designer",
+              "Software Engineer",
+              "Technical Analyst",
+            ];
+
+            let index = 0;
+            const roleText = document.getElementById("role-text");
+
+            function showNextRole() {
+              // Set text and slide in
+              roleText.textContent = roles[index];
+              roleText.classList.remove("opacity-0", "-translate-x-10");
+              roleText.classList.add("opacity-100", "translate-x-0");
+
+              // Hold, then fade out & slide left
+              setTimeout(() => {
+                roleText.classList.remove("opacity-100", "translate-x-0");
+                roleText.classList.add("opacity-0", "-translate-x-10");
+              }, 2000); // visible time
+
+              // Move to next role
+              index = (index + 1) % roles.length;
+            }
+
+            // Loop
+            showNextRole();
+            setInterval(showNextRole, 3000); // total cycle per role
+          </script>
+
+          <p class="sm:text-3xl text-2xl pb-3 font-sans font-semibold sm:mt-13">
+            One Creative Mind
+          </p>
+
+          <div
+            class="text-sm font-semibold space-x-5 flex justify-center sm:justify-start"
+          >
+            <a href="#Contacts">
+              <button
+                class="cursor-pointer p-5 sm:w-40 w-30 rounded-4xl sm:h-20 bg-purple-900 text-white hover:bg-purple-800 active:opacity-70 hover:text-purple-200 transition"
+              >
+                HIRE ME
+              </button>
+            </a>
+            <a href="#Projects">
+              <button
+                class="cursor-pointer border-1 border-purple-900 active:opacity-70 p-5 sm:w-40 w-30 sm:h-20 rounded-4xl text-purple-900 hover:bg-purple-900 hover:text-purple-200 transition"
+              >
+                MY WORKS
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--About Me-->
+    <section
+      class="sm:max-w-7xl sm:pr-6 sm:m-auto p-2 py-30 align-middle sm:w-screen sm:items-center"
+      id="About"
+    >
+      <p class="text-4xl text-white opacity-15 font-bold sm:hidden mb-5">
+        About me
+      </p>
+      <div class="w-full flex flex-col sm:flex-row sm:mx-5 align-middle">
+        <div class="w-1/2 text-purple-200 min-w-full sm:min-w-0">
+          <div class="space-y-4 text-xl mb-5 text-purple-200">
+            <p>Name: Badmus Michael</p>
+            <p>Job Role: Visual Designer & Software Engineer</p>
+            <p>Experience: 3years 3months</p>
+            <p>Location: Nigeria, Africa.</p>
+          </div>
+
+          <div class="space-y-4 sm:text-xl mt-10">
+            <p class="font-semibold">Skills;</p>
+            <p>Adobe Photoshop 95%</p>
+            <div class="w-auto md:w-80 lg:w-100 h-3 bg-gray-900 rounded">
+              <div class="h-3 bg-purple-400 rounded" style="width: 95%"></div>
+            </div>
+            <p>Adobe Illustrator 85%</p>
+            <div class="w-auto md:w-80 lg:w-100 h-3 bg-gray-900 rounded">
+              <div class="h-3 bg-purple-400 rounded" style="width: 85%"></div>
+            </div>
+            <p>CorelDraw 95%</p>
+            <div class="w-auto md:w-80 lg:w-100 h-3 bg-gray-900 rounded">
+              <div class="h-3 bg-purple-400 rounded" style="width: 95%"></div>
+            </div>
+            <p>HTML, CSS, Javascript 85%</p>
+            <div class="w-auto md:w-80 lg:w-100 h-3 bg-gray-900 rounded">
+              <div class="h-3 bg-purple-400 rounded" style="width: 85%"></div>
+            </div>
+            <p>Wordpress 80%</p>
+            <div class="w-auto md:w-80 lg:w-100 h-3 bg-gray-900 rounded">
+              <div class="h-3 bg-purple-400 rounded" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="w-1/2 space-y-20 mt-10 sm:mt-0 min-w-full sm:min-w-0 sm:max-w-full"
+        >
+          <p class="sm:text-5xl text-4xl text-white font-bold mb-5">About Me</p>
+          <p class="text-purple-200 sm:text-md">
+            Hello, I'm a Professional Visual Designer and Software Engineer,
+            specializing in visually compelling designs and responsive websites.
+            I'm here to help elevate your brand with creative and functional
+            solutions, with over 3years of comprehensive experience in the field
+            of Software Engineering & tech. <br />
+            I possess the skills and knowledge to ensure the success of your
+            project.
+          </p>
+
+          <div class="mt-5 sm:space-y-10 space-y-5 text-xl">
+            <p class="text-purple-200">
+              <b class="text-white">Profile: </b>Visual Designer & Software
+              Engineer
+            </p>
+            <p class="text-purple-200">
+              <b class="text-white">Education: </b>Software Engineering
+            </p>
+            <p class="text-purple-200">
+              <b class="text-white">Language: </b>English, Yoruba
+            </p>
+            <p class="text-purple-200">
+              <b class="text-white">Other Skills: </b> Photography, Technical
+              Analsyst
+            </p>
+            <p class="text-purple-200">
+              <b class="text-white">Interest: </b>Creating functional solutions
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Projects-->
+    <section class="sm:max-w-7xl sm:m-auto p-2 bg-purple-200" id="Projects">
+      <div class="sm:mx-5 my-15 sm:my-29">
+        <div class="flex justify-center">
+          <p class="font-bold sm:text-5xl text-4xl text-purple-900">Projects</p>
+        </div>
+        <div class="flex justify-center text-md text-center mt-2">
+          <p>
+            Below are samples of my recent jobs which includes Visual Designs,
+            Logo Designs, Brand Identity, <br />Website Mockups, and so on...
+
+            <br /><b
+              >NB: please this are just samples of my recent jobs, feel free to
+              go through my social handles below to view more projects have
+              worked on..!</b
+            >
+          </p>
+        </div>
+
+        <div class="sm:grid grid-cols-3 gap-5 mt-10 space-y-7">
+          <div class="text-center">
+            <img
+              src="../My Portfolio/imgs/Design Collage.png"
+              alt=""
+            />
+            <p class="font-bold text-2xl text-purple-900">
+              <u>Visual Designs</u>
+            </p>
+            <p>
+              I create compelling visuals that not only capture attention but
+              also communicate your brand's message with clarity, creativity,
+              and lasting impact.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <img src="../My Portfolio/imgs/Logo-Mockups.png" alt="" />
+            <p class="font-bold text-2xl text-purple-900">
+              <u>Logo Design</u>
+            </p>
+            <p>
+              I design professional, bold, and unique logos that help brands and
+              business owners stand out, communicate their identity, and build
+              lasting recognition.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <img src="../My Portfolio/imgs/Photoshop Course Pack.png" alt="" />
+            <p class="font-bold text-2xl text-purple-900">
+              <u>Photoshop Course</u>
+            </p>
+            <p>
+              I offer a comprehensive Photoshop design course for aspiring designers, teaching practical skills to create professional, bold, and unique visual designs. 
+            </p>
+            <a href="https://wa.me/2348140301691" class="underline font-semibold text-purple-900">Get Started Today!</a>
+          </div>
+
+          <div class="text-center">
+            <img src="../My Portfolio/imgs/website mockup.png" alt="" />
+            <p class="font-bold text-2xl text-purple-900">
+              <u>Website Development</u>
+            </p>
+            <p>
+              I also build fully responsive websites from scratch, designed to be fast, user-friendly, and aligned with your brand for maximum impact.
+            </p>
+          </div>
+
+          <div class="text-center">
+            <img src="../My Portfolio/imgs/FOREX MENTORSHIP.png" alt="" />
+            <p class="font-bold text-2xl text-purple-900">
+              <u>Forex Mentorships</u>
+            </p>
+            <p>
+              I mentor beginners in forex trading, providing clear guidance, practical strategies, and step-by-step support to help them trade confidently and avoid costly mistakes.
+            </p>
+            <a href="https://wa.me/2348140301691" class="underline font-semibold text-purple-900">Get Started Today!</a>
+          </div>
+
+          <div class="text-center">
+            <img src="../My Portfolio/imgs/My Brand Identity 2-01.jpg" alt="" />
+            <p class="font-bold text-2xl text-purple-900">
+              <u>Brand Identity</u>
+            </p>
+            <p>
+              I create long-lasting brand identities that are professional, bold, and unique, helping businesses stand out, connect with their audience, and grow with confidence.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!--Contact Me-->
+    <section class="sm:max-w-7xl sm:m-auto sm:p-10 mt-15" id="Contacts">
+      <div class="sm:mx-5 sm:my-20 my-40">
+        <div class="flex justify-center">
+          <p class="sm:text-5xl text-4xl text-white font-bold">Contact Me</p>
+        </div>
+        <div class="flex justify-center text-md text-center mt-2 text-white">
+          <p class="px-5 sm:mt-3">
+            Below are the details to reach out to me! And let's discuss on how
+            to kick-off your brand <br />
+            and move your business forward
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row sm:gap-15 lg:gap-35 gap-20 max-w-full mt-20 text-center justify-center sm:mt-35"
+        >
+          <div class="space-y-2 flex flex-col items-center">
+            <a href="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="110"
+                fill="currentColor"
+                class="cursor-pointer text-purple-900 w-25 h-25 rounded-full px-7 bg-purple-200 shadow-md shadow-purple-400"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+                />
+              </svg>
+            </a>
+            <p class="font-bold text-2xl text-white">Location</p>
+            <p class="text-purple-200">Nigeria, Africa.</p>
+          </div>
+
+          <div class="space-y-2 flex flex-col items-center">
+            <a href="https://wa.me/2348140301691">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="110"
+                fill="currentColor"
+                class="cursor-pointer text-purple-900 w-25 h-25 rounded-full px-7 bg-purple-200 shadow-md shadow-purple-400"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                />
+              </svg>
+            </a>
+            <p class="font-bold text-2xl text-white">Contact Number</p>
+            <p class="text-purple-200">(+234)8140301691.</p>
+          </div>
+
+          <div class="space-y-2 flex flex-col items-center">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=boyalonegraphixx001@gmail.com"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="110"
+                fill="currentColor"
+                class="cursor-pointer text-purple-900 w-25 h-25 rounded-full px-7 bg-purple-200 shadow-md shadow-purple-400"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 4.697v4.974A4.5 4.5 0 0 0 12.5 8a4.5 4.5 0 0 0-1.965.45l-.338-.207z"
+                />
+                <path
+                  d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686"
+                />
+              </svg>
+            </a>
+            <p class="font-bold text-2xl text-white">Email Address</p>
+            <p class="text-purple-200">boyalonegraphixx001@gmail.com</p>
+          </div>
+
+          <div class="space-y-2 flex flex-col items-center">
+            <a href="/My Portfolio/imgs/BADMUS MICHAEL RESUME.pdf" download="/My Portfolio/imgs/BADMUS MICHAEL RESUME.pdf">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="110"
+                fill="currentColor"
+                class="cursor-pointer text-purple-900 w-25 h-25 rounded-full px-7 bg-purple-200 shadow-md shadow-purple-400"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"
+                />
+                <path
+                  d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"
+                />
+              </svg>
+            </a>
+            <p class="font-bold text-2xl text-white">Resume</p>
+            <p class="text-purple-200">Download Resume</p>
+          </div>
+        </div>
+
+        <!--Social Media-->
+        <div
+          class="flex justify-center sm:p-20 mx-10 lg:mx-80 font-semibold sm:text-2xl text-xl text-purple-200 sm:mt-25 sm:my-0 my-20 sm:space-x-2"
+        >
+          <p class="w-full sm:min-w-0">Find me on</p>
+
+          <div class="flex sm:space-x-2 space-x-3">
+            <div
+              class="flex items-center align-middle hover:text-purple-400 cursor-pointer transition"
+            >
+              <a
+                href="https://www.tiktok.com/@boyalone_graphix?is_from_webapp=1&sender_device=pc"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="border-3 w-12 h-10 px-3 rounded-full shadow-md"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div
+              class="flex items-center align-middle hover:text-purple-400 cursor-pointer transition"
+            >
+              <a
+                href="https://www.instagram.com/boyalonegraphix?igsh=MTAydmFkZXpwaXVsMg%3D%3D&utm_source=qr"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="border-3 w-12 h-10 px-3 rounded-full shadow-md"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div
+              class="flex items-center align-middle hover:text-purple-400 cursor-pointer transition"
+            >
+              <a href="https://x.com/boyalonegraphix?s=21">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="border-3 w-12 h-10 px-3 rounded-full shadow-md"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div
+              class="flex items-center align-middle hover:text-purple-400 cursor-pointer transition"
+            >
+              <a
+                href="https://www.linkedin.com/in/badmus-michael"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="border-3 w-12 h-10 px-3 rounded-full shadow-md"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Copyright-->
+      <div
+        class="text-purple-200 sm:text-md text-md justify-center sm:p-2 p-11 text-center sm:mb-20 mb-10"
+      >
+        <p class="">©2025 BoyAlone All rights reserved</p>
+      </div>
+    </section>
+  </body>
+</html>
